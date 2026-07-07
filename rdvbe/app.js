@@ -129,9 +129,10 @@ async function initDashboard() {
     }, 86400000);
 
   } catch (error) {
+    console.error("ERREUR DASHBOARD:", error);
+
     document.getElementById("agentChart").innerHTML =
-      `<div class="error">${escapeHtml(error.message || error)}</div>`;
+      `<div class="error">${String(error.message || error)}</div>`;
   }
-}
 
 document.addEventListener("DOMContentLoaded", initDashboard);
