@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>RDVBE Performance Center</title>
+
+  <link rel="stylesheet" href="./style.css" />
+</head>
+
+<body>
+  <main class="app">
+
+    <header class="topbar">
+      <div>
+        <div class="brand">BY DIGITAL DETROIT</div>
+        <h1>📅 SERVICES NETS RDVBE</h1>
+        <div id="monthLabel" class="month">Juillet 2026</div>
+      </div>
+
+      <div class="timeBox">
+        <div id="clock">--:--:--</div>
+        <div id="lastUpdate">Dernière MAJ : -</div>
+      </div>
+    </header>
+
+    <section class="kpiGrid">
+
+      <article class="kpiCard">
+        <div class="kpiTitle">Performance plateau</div>
+        <div id="teamScore" class="kpiValue danger">0 / 0</div>
+        <div id="teamPercent" class="kpiSub danger">0%</div>
+        <div class="progressTrack">
+          <div id="teamProgress" class="progressFill danger"></div>
+        </div>
+      </article>
+
+      <article class="kpiCard">
+        <div class="kpiTitle">Taux de signature</div>
+        <div id="signatureRate" class="kpiValue">0%</div>
+        <div id="signatureMeta" class="kpiSub">0 / 0 RDV</div>
+      </article>
+
+      <article class="kpiCard">
+        <div class="kpiTitle">Agents actifs</div>
+        <div id="agentsCount" class="kpiValue">0</div>
+        <div class="kpiSub">Objectif agent : 20 services</div>
+      </article>
+
+    </section>
+
+    <section class="chartPanel">
+      <div class="chartHeader">
+        <h2>Services signés par agent</h2>
+        <span>Rouge &lt; 20 · Vert ≥ 20</span>
+      </div>
+
+      <div id="agentChart" class="agentChart"></div>
+    </section>
+
+  </main>
+
+  <div id="agentModal" class="modal hidden">
+    <div class="modalCard">
+      <button id="closeModal" class="closeBtn">×</button>
+
+      <div class="modalHead">
+        <div>
+          <h3 id="modalAgentName">Agent</h3>
+          <p id="modalAgentMeta">Juillet 2026</p>
+        </div>
+
+        <button id="exportExcel" class="exportBtn">
+          Exporter Excel
+        </button>
+      </div>
+
+      <div class="tableWrap">
+        <table>
+          <thead>
+            <tr>
+              <th>Client</th>
+              <th>Telco</th>
+              <th>Énergie</th>
+              <th>Total</th>
+            </tr>
+          </thead>
+          <tbody id="modalRows"></tbody>
+        </table>
+      </div>
+
+      <div id="modalTotal" class="modalTotal">Total agent : 0</div>
+    </div>
+  </div>
+
+  <script src="./api.js"></script>
+  <script src="./export.js"></script>
+  <script src="./popup.js"></script>
+  <script src="./app.js"></script>
+</body>
+</html>
