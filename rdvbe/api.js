@@ -1,4 +1,4 @@
-const API_URL = "https://script.google.com/macros/s/AKfycbwqgy3XZwcpGW4XZ-ly0aMld5UbOeh6nGI2y5syfdXeAScFc5Tf-4l8P17EMIyX6PA586w/exec?api=dashboard";
+const API_URL = "https://script.google.com/macros/s/AKfycbzhpeSXP-bE6Km9gGk7DQSLdwtopWN8svJ-Af_EtcyGGLwLdTtL8jVuEvtOVqSvsRa_LQ/exec?api=dashboard";
 
 function fetchDashboardData() {
   return new Promise((resolve, reject) => {
